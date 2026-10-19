@@ -120,7 +120,8 @@ ready(function () {
       if (value) payload[key] = value;
     });
     if (data.email.trim()) payload._replyto = data.email.trim();
-
+    
+    event.preventDefault()
     fetch("https://formsubmit.co/ajax/" + encodeURIComponent(inbox), {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
