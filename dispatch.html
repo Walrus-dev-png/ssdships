@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dispatch — S&S Logistics</title>
+    <meta name="description" content="Request a hotshot load from S&S Logistics." />
+    <meta name="theme-color" content="#efeee9" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/site.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="ink-bar"></div>
+      <div class="wrap header-row">
+        <a class="brand" href="index.html">
+          <span class="mark" aria-hidden="true">S&S</span>
+          <span class="wordmark">S&S Logistics</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="dispatch.html" aria-current="page">Dispatch</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap page">
+      <div class="form-intro">
+        <p class="kicker">02<span aria-hidden="true">/</span>Dispatch</p>
+        <h1>Request a load</h1>
+        <p class="lede">Tell dispatch what needs to move.</p>
+      </div>
+
+      <form id="load-form" novalidate>
+        <div class="honey" aria-hidden="true">
+          <label>Leave blank<input type="text" name="_honey" tabindex="-1" autocomplete="off" /></label>
+        </div>
+        <div class="grid">
+          <div class="field">
+            <label class="label" for="name">Name</label>
+            <input id="name" name="name" autocomplete="name" />
+            <p data-error="name" role="alert"></p>
+          </div>
+          <div class="field">
+            <label class="label" for="company">Company</label>
+            <input id="company" name="company" autocomplete="organization" />
+            <p data-error="company" role="alert"></p>
+          </div>
+          <div class="field">
+            <label class="label" for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            <p data-error="phone" role="alert"></p>
+          </div>
+          <div class="field">
+            <label class="label" for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" />
+            <p data-error="email" role="alert"></p>
+          </div>
+          <div class="field">
+            <label class="label" for="pickup">Pickup</label>
+            <input id="pickup" name="pickup" />
+            <p data-error="pickup" role="alert"></p>
+          </div>
+          <div class="field">
+            <label class="label" for="delivery">Delivery</label>
+            <input id="delivery" name="delivery" />
+            <p data-error="delivery" role="alert"></p>
+          </div>
+          <div class="field">
+            <label class="label" for="commodity">Commodity</label>
+            <input id="commodity" name="commodity" />
+            <p data-error="commodity" role="alert"></p>
+          </div>
+          <div class="field">
+            <label class="label" for="weight">Weight</label>
+            <input id="weight" name="weight" />
+            <p data-error="weight" role="alert"></p>
+          </div>
+          <div class="field wide">
+            <label class="label" for="needed_by">Needed by</label>
+            <input id="needed_by" name="needed_by" />
+            <p data-error="needed_by" role="alert"></p>
+          </div>
+          <div class="field wide">
+            <label class="label" for="notes">Notes</label>
+            <textarea id="notes" name="notes"></textarea>
+            <p data-error="notes" role="alert"></p>
+          </div>
+        </div>
+        <p class="hint">Name, a phone or email, pickup, and delivery.</p>
+        <p id="form-status" class="hint" role="status"></p>
+        <div class="actions">
+          <button class="btn" type="submit">Submit request</button>
+        </div>
+      </form>
+
+      <section id="receipt" hidden tabindex="-1">
+        <h2>Request sent</h2>
+        <p>This request was emailed to dispatch. Reply goes to the address on the form when one was given.</p>
+        <dl id="receipt-list" class="ledger"></dl>
+        <div class="actions">
+          <button class="btn ghost" type="button" id="edit-request">Edit request</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-row">
+        <p class="footer-name">S&S Logistics</p>
+        <p class="muted">Hotshot delivery · Heavy industrial</p>
+        <a href="dispatch.html">Request a load</a>
+      </div>
+    </footer>
+    <script src="js/site.js"></script>
+  </body>
+</html>
